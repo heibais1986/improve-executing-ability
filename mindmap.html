@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目执行力与自我成长思维导图</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', 'Helvetica Neue', 'Arial', sans-serif;
+            overflow: hidden; /* Prevent body scroll when panel is open */
+        }
+        .mermaid .node:hover {
+            opacity: 0.8;
+        }
+        .mermaid .clickable-node {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 flex items-center justify-center min-h-screen p-4">
+    <!-- Main Content -->
+    <div class="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-7xl">
+        <h1 class="text-2xl md:text-3xl font-bold text-center text-gray-800 mb-2">项目执行力与自我成长</h1>
+        <p class="text-center text-gray-500 mb-8">一个从副业到实现自我的系统化路径 (点击各分支查看详情)</p>
+        <div class="mermaid-container overflow-auto">
+            <div class="mermaid" id="mindmap">
+mindmap
+  root((核心: 从做副业到做自己))
+    s1[<b>项目发展的四个阶段</b>]
+      寻找项目
+        ::icon(fa fa-search)
+        特点: 高度不确定
+        心态: 挫败和放弃很正常
+      测试项目
+        ::icon(fa fa-vial)
+        核心: 跑通最小闭环
+        目标: 获得正反馈(赚钱)
+      选定项目
+        ::icon(fa fa-check-circle)
+        标志: 收入稳定
+        风险: 仍可能放弃
+      放大项目
+        ::icon(fa fa-rocket)
+        驱动力: 追求自由
+        要求: 更多决策和资源
+    s2[<b>执行力问题的两大根源</b>]
+      内在系统问题
+        ::icon(fa fa-heart)
+        表现: 累, 内耗, 恐惧
+        本质: 动力系统失调
+      外在系统问题
+        ::icon(fa fa-cogs)
+        表现: 技能/知识卡点
+        解决: 学习与请教
+      内外因交织
+        ::icon(fa fa-link)
+        表现: 技能卡点加剧情绪内耗
+    s3[<b>构建可持续的执行力系统</b>]
+      核心理念
+        ::icon(fa fa-lightbulb)
+        我做得爽 (内在动力)
+        市场需要 (外在验证)
+      方法论: 四环模型
+        ::icon(fa fa-ring)
+        兴趣
+        能力
+        需求
+        价值
+      执行策略: 最小闭环
+        ::icon(fa fa-recycle)
+        定义: 最关键的赚钱动作
+        步骤: 验证 -> 迭代 -> 聚焦
+    s4[<b>提升执行欲望的行动策略</b>]
+      增加动力 vs 减少阻力
+        ::icon(fa fa-balance-scale)
+        动力+: 记录进步, 获得反馈
+        阻力-: 避免比较, 追求完美
+      设置“行动加速器”
+        ::icon(fa fa-tachometer-alt)
+        记录进步日记
+        学会奖励自己
+        设定下个目标
+      应对持续的挫败感
+        ::icon(fa fa-shield-alt)
+        设置项目探索期
+        聚焦阶段性目标
+    s5[<b>最终心态与目标</b>]
+      转变视角
+        ::icon(fa fa-eye)
+        不适感 = 内心渴望的信号
+      习惯成功
+        ::icon(fa fa-trophy)
+        有意识地体验成功
+      终极目标
+        ::icon(fa fa-flag-checkered)
+        让赚钱与个人意义相互循环
+            </div>
+        </div>
+    </div>
+
+    <!-- Details Panel Overlay -->
+    <div id="panel-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-30 hidden transition-opacity duration-300"></div>
+
+    <!-- Details Panel -->
+    <div id="details-panel" class="fixed top-0 right-0 h-full w-full max-w-md bg-white shadow-2xl z-40 transform translate-x-full transition-transform duration-300 ease-in-out">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-between items-center p-5 border-b">
+                <h2 id="panel-title" class="text-xl font-bold text-gray-800">详情</h2>
+                <button id="close-panel" class="text-gray-500 hover:text-gray-800">&times;</button>
+            </div>
+            <div id="panel-content" class="p-6 overflow-y-auto flex-grow text-gray-700 leading-relaxed">
+                <!-- Content will be injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        await mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#F3F4F6',
+                primaryTextColor: '#1F2937',
+                primaryBorderColor: '#D1D5DB',
+                lineColor: '#6B7280',
+                secondaryColor: '#E5E7EB',
+                tertiaryColor: '#F9FAFB',
+                fontSize: '16px',
+                fontFamily: 'Inter'
+            }
+        });
+        
+        await mermaid.run();
+
+        // --- Interactive Logic ---
+        const detailsData = {
+            s1: {
+                title: '项目发展的四个阶段',
+                content: `
+                    <p class="mb-4">清晰判断自己所处阶段，可以避免盲目比较，建立心理底气。</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><b>寻找项目:</b> 此阶段不确定性高，对项目认知模糊。遇到挫败、卡点、甚至放弃都是正常现象。</li>
+                        <li><b>测试项目:</b> 核心目标是跑通最小闭环，验证赚钱路径。获得正反馈是关键，哪怕收入微薄。</li>
+                        <li><b>选定项目:</b> 标志是项目能带来稳定的月收入。此时信心增强，但仍可能因新机会而重新选择。</li>
+                        <li><b>放大项目:</b> 当野心放大，追求更大自由时进入此阶段。需要做更多决策，投入更多资源，甚至组建团队。</li>
+                    </ul>
+                `
+            },
+            s2: {
+                title: '执行力问题的两大根源',
+                content: `
+                    <p class="mb-4">执行力问题通常不是单一原因，而是内在心态和外在技能的复合问题。</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><b>内在系统问题:</b> 指情绪和心理层面。表现为感觉累、时间精力不足、情绪内耗、恐惧失败。本质是动力系统失调。</li>
+                        <li><b>外在系统问题:</b> 指技能或知识层面。如代码报错、工具不会用等。必须通过学习和请教来攻克。</li>
+                        <li><b>内外因交织:</b> 最常见的情况。外在技能的卡点加剧了内在的情绪内耗和焦虑，形成恶性循环。</li>
+                    </ul>
+                `
+            },
+            s3: {
+                title: '构建可持续的执行力系统',
+                content: `
+                    <p class="mb-4">核心是设计一个能持续激发你执行欲望的系统，而非单纯依靠自律。</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><b>核心理念:</b> 追求两个关键点的平衡：<b>我做得爽</b> (内在动力) 和 <b>市场需要</b> (外在验证)。</li>
+                        <li><b>方法论(四环模型):</b> 将个人<b>兴趣</b>、<b>能力</b>、市场<b>需求</b>和个人<b>价值</b>追求结合，找到最佳交集。</li>
+                        <li><b>执行策略(最小闭环):</b> 找到项目中“最简单、最关键的赚钱动作”，先通过它验证模式，获得能量后再迭代放大。</li>
+                    </ul>
+                `
+            },
+            s4: {
+                title: '提升执行欲望的行动策略',
+                content: `
+                    <p class="mb-4">通过一系列具体行动，主动管理和提升自己的执行动力。</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><b>增加动力 vs 减少阻力:</b> 多做能增加动力的事（如记录进步、获取反馈），少做增加阻力的事（如盲目比较、过度追求完美）。</li>
+                        <li><b>设置“行动加速器”:</b> 通过写进步日记、学会奖励自己、设定下一个愿景等方式，为自己创造持续的正向激励。</li>
+                        <li><b>应对持续挫败感:</b> 为新项目设置一个“探索期”（如3个月），期间只聚焦最小目标。这能让你无怨无悔地试错和迭代。</li>
+                    </ul>
+                `
+            },
+            s5: {
+                title: '最终心态与目标',
+                content: `
+                    <p class="mb-4">执行力的终极解决方案，是实现个人成长与事业发展的统一。</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li><b>转变视角:</b> 将执行过程中的不爽和卡点，视为一个信号，它在提示你内心真正渴望的是什么。</li>
+                        <li><b>习惯成功:</b> 有意识地去体验和复盘成功，喂养成功的感受，而不是总关注挫败点，建立自信的飞轮。</li>
+                        <li><b>终极目标:</b> 让赚钱与个人意义相互循环迭代，最终达到“做自己”的愉悦状态，那时执行力将不再是问题。</li>
+                    </ul>
+                `
+            }
+        };
+
+        const panel = document.getElementById('details-panel');
+        const panelTitle = document.getElementById('panel-title');
+        const panelContent = document.getElementById('panel-content');
+        const closeBtn = document.getElementById('close-panel');
+        const overlay = document.getElementById('panel-overlay');
+
+        const showPanel = (id) => {
+            const data = detailsData[id];
+            if (data) {
+                panelTitle.innerText = data.title;
+                panelContent.innerHTML = data.content;
+                panel.classList.remove('translate-x-full');
+                overlay.classList.remove('hidden');
+            }
+        };
+
+        const hidePanel = () => {
+            panel.classList.add('translate-x-full');
+            overlay.classList.add('hidden');
+        };
+
+        closeBtn.addEventListener('click', hidePanel);
+        overlay.addEventListener('click', hidePanel);
+
+        // Attach click listeners to mermaid nodes
+        const mindmapContainer = document.getElementById('mindmap');
+        mindmapContainer.addEventListener('click', (event) => {
+            const node = event.target.closest('.node');
+            if (node) {
+                const nodeId = Object.keys(detailsData).find(key => node.id.includes(key));
+                if (nodeId) {
+                    showPanel(nodeId);
+                }
+            }
+        });
+        
+        // Add clickable class for cursor style
+        Object.keys(detailsData).forEach(key => {
+            const nodes = mindmapContainer.querySelectorAll(`[id*="${key}"]`);
+            nodes.forEach(node => {
+                if(node.classList.contains('node')) {
+                    node.classList.add('clickable-node');
+                }
+            });
+        });
+
+    </script>
+    <script src="https://kit.fontawesome.com/662a7b1b34.js" crossorigin="anonymous"></script>
+</body>
+</html>
+
